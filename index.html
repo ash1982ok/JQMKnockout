@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitter Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- required libraries -->
+  <link rel="stylesheet" href="lib/jquery.mobile-1.2.0.min.css" />
+  <script type="text/javascript" src="lib/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" src="lib/jquery.mobile-1.2.0.min.js"></script>
+  <script type="text/javascript" src="lib/jquery.jsonp-2.1.4.min.js"></script>
+  <script type="text/javascript" src="lib/knockout-2.2.0rc.debug.js"></script>
+  <script type="text/javascript" src="lib/iscroll.js"></script>
+  <script type="text/javascript" src="lib/jquery.mobile.iscrollview.js"></script>
+  <script type="text/javascript" src="lib/humane.min.js"></script>
+
+  <!-- the various view models -->
+  <script type="text/javascript" src="viewModel/LoginViewModel.js"></script>
+  
+  <!-- the code that puts it all together -->
+  <script type="text/javascript" src="js/app.js" ></script>
+  
+  <!-- some simple styling for the twitter view -->
+  <link rel="stylesheet" href="resources/css/style.css" />
+  <link rel="stylesheet" href="resources/css/notification.css" />
+</head>
+<body>
+
+  <!-- ### A page that renders the LoginView -->
+  <div id="loginView" data-role="page" >
+    <div data-role="header" data-position="fixed">
+        <h1>Login-1</h1>
+    </div>
+    <div class="login-view">
+      User Name: <input id="txtUserName" data-bind="text: $data.userName"/>
+      Password: <input id="txtPassword" data-bind="text: $data.password"/>
+      <label data-bind="text: $data.loginText">default text</label>
+      <button id="btnLogin" data-bind="click: validateUser"> Next </button>
+    </div>
+  </div>
+
+  <!-- ### A page that renders the LoginView2 -->
+  <div id="loginView2" data-role="page" >
+    <div data-role="header" data-position="fixed">
+        <h1>Login-2</h1>
+    </div>
+  <div id="login-view2" class="humane-boldlight">
+      <lable data-bind="text:$data.passChar1">: <input id="txtPassChar1" type="password"/>
+      <lable data-bind="text:$data.passChar1">:<input id="txtPassChar2" type="password"/>
+      <button id="btnLogin" data-bind="click: validateUser"> Login </button>
+    </div>
+  </div>
+
+</body>
+</html>
