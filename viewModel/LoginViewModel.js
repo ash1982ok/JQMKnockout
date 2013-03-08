@@ -1,14 +1,13 @@
-function LoginViewModel (){
-		this.userName = ko.observable("");
-		this.password = ko.observable("");
-		
-		this.loginText = ko.observable("Hello Knockout World");
 
+define( ['knockout','notify'],function (ko,humane){
+
+	return function LoginViewModel ()
+	{
 		this.validateUser = function validateUser(){
 			if($("#txtUserName").val()=="root" && $("#txtPassword").val()=="root")
 			{
 				//change to second login page
-					$.mobile.changePage("#loginView2", "slide", true, false);
+				$.mobile.changePage("#loginView2", "slide", true, false);
 				return;
 			}
 			else
@@ -19,4 +18,5 @@ function LoginViewModel (){
 				bigbox.error('Oh No!!! Wrong password')
 			}
 		};
-};
+	};
+});

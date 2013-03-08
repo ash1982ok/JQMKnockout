@@ -1,1 +1,15 @@
 http://marcinbudny.blogspot.co.uk/2012/11/using-jquery-mobile-with-knockout.html#.UTPEwKKBlOg
+
+Responsive Design
+----------------------
+https://www.ibm.com/developerworks/mobile/library/mo-jquery-responsive-design/
+https://github.com/jeromeetienne/jquery-mobile-960
+http://masonry.desandro.com/demos/centered.html
+
+
+Timeline
+--------------
+http://almende.github.com/chap-links-library/timeline.html
+http://www.radiolab.org/blogs/radiolab-blogland/2012/jun/29/color-walk/
+
+http://isotope.metafizzy.co/index.html
