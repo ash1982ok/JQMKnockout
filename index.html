@@ -7,51 +7,67 @@
   <!-- required libraries -->
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.css" />
   
-  <!--<script type="text/javascript" src="lib/jquery-1.8.2.min.js"></script>
-  <script type="text/javascript" src="lib/jquery.mobile-1.2.0.min.js"></script>
-  <script type="text/javascript" src="lib/jquery.jsonp-2.1.4.min.js"></script>
-  <script type="text/javascript" src="lib/knockout-2.2.0rc.debug.js"></script>
-  <script type="text/javascript" src="lib/iscroll.js"></script>
-  <script type="text/javascript" src="lib/jquery.mobile.iscrollview.js"></script>
-  <script type="text/javascript" src="lib/humane.min.js"></script> -->
-
-  <!-- the various view models -->
-  <!--<script type="text/javascript" src="viewModel/LoginViewModel.js"></script> -->
-  
-  <!-- the code that puts it all together -->
-  <!-- <script type="text/javascript" src="js/app.js" ></script> -->
-  
   <!-- some simple styling for the twitter view -->
   <link rel="stylesheet" href="resources/css/style.css" />
   <link rel="stylesheet" href="resources/css/notification.css" />
 </head>
-<body data-theme="b">
+<body>
+    
+    <div data-role="page" id="popupLogin" data-transition="pop"
+        data-overlay-theme="c" > 
+            
+              <div style="padding:10px 20px;">
+                  <h3>Please sign in</h3>
+                        <label for="userName" class="ui-hidden-accessible ui-input-text">Username:</label>
+                        <input type="text" placeholder="username" name="name" id="userName" value=""  />
+                        
+                        <label for="password" class="ui-hidden-accessible ui-input-text">Password:</label>
+                        <input type="text" placeholder="password" name="name" id="password" value=""  />
+ 
+                    <input type="button" data-theme="b"  data-bind="click: validateUser"
+                    value="Continue" data-icon="arrow-r" data-iconpos="right" />
+                    
+                    <div id="errorDiv" data-theme="b" >  </div>
+                        
+                </div> 
+    </div>
 
-  <!-- ### A page that renders the LoginView -->
-  <div id="loginView" data-role="page" >
-    <div data-role="header" data-position="fixed">
-        <h1>Login-1</h1>
+     <div data-role="page" id="passwordDialog" 
+        data-overlay-theme="c" > 
+                <div id="passwordDiv" data-role="fieldcontain">
+                        <label>9 </label>
+                        <input id="pass1" data-role="none" type="text" value=""/>
+                        <label>9 </label>
+                        <input data-role="none" id="pass2" type="text" value=""/>
+                <div id="login2ContinueBtn">
+                        <input type="button" data-theme="b"  data-bind="click: validatePassword"
+                            value="Continue" data-icon="arrow-r" data-iconpos="right" />
+                </div>
+             </div>
     </div>
-    <div class="login-view">
-      User Name: <input id="txtUserName" data-bind="text: $data.userName"/>
-      Password: <input id="txtPassword" data-bind="text: $data.password"/>
-      <label data-bind="text: $data.loginText">default text</label>
-      <button id="btnLogin" data-bind="click: validateUser"> Next </button>
+    
+     <div id="menu" data-theme="a">
+         <h3>Menu</h3>
+        <ul data-theme="a">
+            <li class="active"><a href="#home" class="contentLink">Home </a></li>
+            <li><a href="#home" class="contentLink">About </a></li>
+            <li><a href="#home" class="contentLink">Portfolio </a></li>
+            <li><a href="#home" class="contentLink">Contact </a></li>
+        </ul>
     </div>
-  </div>
-
-  <!-- ### A page that renders the LoginView2 -->
-  <div id="loginView2" data-role="page" >
-    <div data-role="header" data-position="fixed">
-        <h1>Login-2</h1>
-    </div>
-  <div id="login-view2" class="humane-boldlight">
-      <lable data-bind="text:$data.passChar1">: <input id="txtPassChar1" type="password"/>
-      <lable data-bind="text:$data.passChar1">:<input id="txtPassChar2" type="password"/>
-      <button id="btnLogin" data-bind="click: validateUser"> Login </button>
-    </div>
-  </div>
-
+    
+    <div data-role="page" class="pages" id="home">
+    <div data-role="header">
+    <a href="#"class="showMenu">Menu</a>
+        <h1>FB Style Menu</h1>
+    </div><!-- /header -->
+    <div data-role="content">
+        <p><strong>Note: You can swipe right/left to show/close menu.</strong></p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div><!-- /content -->
+</div><!-- /page -->
+  
   <script type="text/javascript" data-main="js/main.js" src="lib/require-jquery.js" ></script>
 </body>
 </html>

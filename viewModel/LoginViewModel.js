@@ -1,14 +1,19 @@
 
-define( ['knockout','notify'],function (ko,humane){
+define( ['knockout','notify','jquery',
+        "./LoginPassViewModel.js"],function (ko,humane,$,loginPassVM){
 
 	return function LoginViewModel ()
 	{
-		this.validateUser = function validateUser(){
-			if($("#txtUserName").val()=="root" && $("#txtPassword").val()=="root")
+		this.validateUser = function (){
+			if($("#userName").val()=="root" && $("#password").val()=="root")
 			{
+                
+                
 				//change to second login page
-				$.mobile.changePage("#loginView2", "slide", true, false);
-				return;
+				$.mobile.changePage("#passwordDialog", "slide", true, false);
+                ko.applyBindings(myApp.models.LoginPassVM, document.getElementById("passwordDialog"));
+
+				return true;
 			}
 			else
 			{
@@ -18,5 +23,6 @@ define( ['knockout','notify'],function (ko,humane){
 				bigbox.error('Oh No!!! Wrong password')
 			}
 		};
+        
 	};
 });

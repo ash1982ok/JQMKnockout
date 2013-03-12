@@ -49,3 +49,19 @@
   padding-bottom: 15px;
   box-shadow: 10px;
 }
+
+#pass2, #pass1
+{
+    width: 30px;
+    padding:2px;
+}
+#passwordDiv
+{
+    padding:20px;
+    justify-content:space-between;
+}
+
+#login2ContinueBtn
+{
+    width:150px;
+}
